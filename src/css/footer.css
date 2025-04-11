@@ -1,0 +1,243 @@
+.last-container{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 30px;
+    align-items: center;
+    padding-top: 20px;
+    background-color: var(--bg-red);
+    height: 180px;
+}
+
+.msa-logo {
+    width: 160px;
+}
+
+.ttu-msa-2 {
+    color: white;
+    justify-content: flex-start;
+    display: flex;
+    font-size: 25px;
+    padding: 0;
+    font-weight: 100;
+    top: 8px;
+    margin-left: 0;
+    position: relative;
+    letter-spacing: 0.5px;
+}
+
+.ttu-basmalah-2 {
+    color: white;
+    letter-spacing: 0.1px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 15px;
+    bottom: 6px;
+    position: relative;
+}
+
+.logo-desc-2 {
+    display: flex;
+    align-items: center;
+}
+
+.h4-2 {
+    color: white;
+    font-weight: 100;
+    opacity: 95%;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 22px;
+    /* letter-spacing: 0.3px; */
+    margin-left: 10px;
+}
+
+.about-footer {
+    scale: 0.9;
+    background-color: var(--bg-red);
+    display: flex;
+    flex-direction: column;
+}
+
+.about-header-footer{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 33px;
+    color: white;
+}
+
+.about-text-footer{
+    margin-top: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    color: white;
+}
+
+.connect {
+    scale: 0.9;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.contactHeading{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 33px;
+    color: white;
+    padding-bottom: 10px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+}
+
+.list li {
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    align-items: center;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.whatsapp{
+    height: 25px;
+    padding-left: 2px;
+    padding-bottom: 3px;
+}
+
+.numberLink{
+    padding-left: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 14.5px;
+}
+
+.email{
+    height: 20px;
+    padding-bottom: 3px;
+}
+
+.emailLink{
+    padding-left: 10px;
+    color: white;
+}
+
+.location{
+    height: 25px;
+    padding-left: 4px;
+    padding-bottom: 3px;
+}
+
+.locationLink{
+    padding-left: 10px;
+    color: white;
+    font-size: 14.5px;
+}
+
+@media all and (width < 600px) {
+    .last-container{
+        display: flex;
+        justify-content: space-evenly;
+        padding-right: 10px;
+        padding-left: 0;
+        padding-top: 20px;
+        background-color: var(--bg-red);
+        height: 180px;
+    }
+
+    .msa-logo {
+        /* scale: 0.7; */
+        width: 70px;
+        bottom: 0;
+    }
+
+    .ttu-msa-2, .ttu-basmalah-2 {
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+    }
+
+    .logo-desc-2 {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        width: 200px;
+        padding-top: 10px;
+        /* align-items: center;
+        justify-content: center; */
+    }
+
+    .about-footer, .about-header-footer {
+        font-size: 13px;
+        margin-left: 10px;
+    }
+
+    .about-text-footer {
+        margin-left: 10px;
+        font-size: 9px;
+        margin-top: 6px;
+    }
+    .connect {
+        padding-bottom: 0px;
+        display: flexbox;
+        justify-content: center;
+    }
+
+    .contactHeading {
+        font-size: 13px;
+        padding-left: 9px;
+    }
+
+    .whatsapp, .email, .location {
+        scale: 0.5;
+    }
+     
+     .numberLink, .emailLink, .locationLink {
+        font-size: 9px;
+        margin-left: 0;
+        padding: 0;
+    }
+}
+
+@media all and (600px < width < 928px) {
+    .msa-logo {
+        /* scale: 0.9; */
+        width: 100px;
+    }
+
+    .about, .about-header {
+        font-size: 23px;
+    }
+
+    .about-text {
+        font-size: 16px;
+        margin-top: 6px;
+    }
+    .connect {
+        padding-bottom: 0px;
+        display: flexbox;
+        justify-content: center;
+    }
+
+    .contactHeading {
+        font-size: 23px;
+        padding-left: 9px;
+    }
+
+    .whatsapp, .email, .location {
+        scale: 0.7;
+    }
+     
+     .numberLink, .emailLink, .locationLink {
+        font-size: 16px;
+        margin-left: 0;
+        padding: 0;
+    }
+}
