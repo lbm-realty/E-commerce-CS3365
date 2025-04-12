@@ -1,95 +1,18 @@
 import { useEffect, useState } from "react";
-import "../css/shopComponent.css";
-import merch1 from "../images/merch1.png";
-import merch2 from "../images/merch2.png";
 import { useNavigate } from 'react-router-dom';
-import FilterOptions from "./filterOptions";
+// import FilterOptions from "./filterOptions";
+// import SearchBar from "./searchBar";
 
-const ShopComponent = () => {
+const ShopComponent = ({ data, addToCart }) => {
   const sizes = ["S", "M", "L", "XL"];
   const [selectSize, setSelectSize] = useState(new Array(3).fill(false));
   const [size, setSize] = useState(new Array(3).fill(""))
   const [amount, setAmount] = useState(new Array(3).fill(0))
   const [total, setTotal] = useState(0);
-  // const [changed, setChanged] = useState(false);
   const navigate = useNavigate();
-
-  const current_products = [
-    {
-      id: 1,
-      source: merch1,
-      name: "'25-26 Hoodie",
-      price: "$39.99",
-      quantity: 0,
-      productSize: "" 
-    },
-    {
-      id: 2,
-      source: merch2,
-      name: "'24-25 Hoodie",
-      price: "$49.99",
-      quantity: 0,
-      productSize: "" 
-    },
-    {
-      id: 3,
-      source: merch1,
-      name: "'23-24 Hoodie",
-      price: "$39.99",
-      quantity: 0,
-      productSize: "" 
-    },
-    {
-      id: 1,
-      source: merch1,
-      name: "'25-26 Hoodie",
-      price: "$39.99",
-      quantity: 0,
-      productSize: "" 
-    },
-    {
-      id: 2,
-      source: merch2,
-      name: "'24-25 Hoodie",
-      price: "$49.99",
-      quantity: 0,
-      productSize: "" 
-    },
-    {
-      id: 3,
-      source: merch1,
-      name: "'23-24 Hoodie",
-      price: "$39.99",
-      quantity: 0,
-      productSize: "" 
-    },
-    {
-      id: 1,
-      source: merch1,
-      name: "'25-26 Hoodie",
-      price: "$39.99",
-      quantity: 0,
-      productSize: "" 
-    },
-    {
-      id: 2,
-      source: merch2,
-      name: "'24-25 Hoodie",
-      price: "$49.99",
-      quantity: 0,
-      productSize: "" 
-    },
-    {
-      id: 3,
-      source: merch1,
-      name: "'23-24 Hoodie",
-      price: "$39.99",
-      quantity: 0,
-      productSize: "" 
-    },
-    
-  ];
-  const [products, setProducts] = useState(current_products);
+  console.log(`Props in shopcomp: ${data.length}`)
+  const current_products = data;
+  const [products, setProducts] = useState(data);
 
   useEffect(() => {
       setTotal(() => {
@@ -97,13 +20,14 @@ const ShopComponent = () => {
           return accumulator + currentValue
         }, 0);
       })
-      const updatedProducts = products.map((product, index) => ({
+      const updatedProducts = data.map((product, index) => ({
         ...product,
         quantity: amount[index],
         productSize: size[index]
       }));
       setProducts(updatedProducts)
-  }, [amount, size, products]); 
+      addToCart(updatedProducts)
+  }, [amount, size, data]); 
 
   const handleCartClick = () => {
     setProducts(products);
@@ -138,8 +62,7 @@ const ShopComponent = () => {
   
   return (
       <div className="flex bg-blue-100">
-        <FilterOptions />
-        <div className="py-40 px-20">
+        <div className="py-20 px-20 ml-40">
           <div className="flex flex-wrap justify-center gap-10 p-2">
             {products.map((product, index1) => (
               <div className="bg-purple-100 p-4 rounded-2xl flex flex-col items-center">
@@ -149,7 +72,7 @@ const ShopComponent = () => {
                   alt="merch1"
                 />
                 <h3 className="text-black font-bold text-2xl">{product.name}</h3>
-                <h3 className="text-black font-bold text-2xl">{product.price}</h3>
+                <h3 className="text-black font-bold text-2xl">${product.price}</h3>
                 <div className="flex gap-2">
                   <div>
                   <button className="flex-none text-white px-2 items-center flex border-white border-solid border-2"

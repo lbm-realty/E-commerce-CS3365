@@ -36,16 +36,18 @@
 
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navbar from "./components/navbar";
+// import Navbar from "./components/navbar";
+import Shop from "./pages/shop";
 import Cart from "./components/cart";
-import ShopComponent from "./components/shopComponent";
+// import ShopComponent from "./components/shopComponent";
+// import DummyData from "./components/dummyData";
 
 function App() {
   return (
       <Router>
-        <Navbar />
+        {/* <Navbar /> */}
         <Routes>
-          <Route path="/shop" element={<ShopComponent />} />    
+          <Route path="/shop" element={<Shop />} />    
           <Route path="/cart" element={<Cart /> } />      
         </Routes>
       </Router>

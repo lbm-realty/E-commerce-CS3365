@@ -1,5 +1,4 @@
 :root {
-    --bg-red: #8B0000;
     --bg-black: #282626;
     --bg-white: #ffffff;
 }
@@ -15,30 +14,6 @@
     align-items: center;
     justify-content: space-between;
 }
-.ttu-msa {
-    color: white;
-    justify-content: flex-start;
-    display: flex;
-    font-size: 18px;
-    padding: 0;
-    font-weight: 100;
-    top: 10px;
-    margin-left: 0;
-    position: relative;
-    letter-spacing: 0.5px;
-}
-
-.ttu-basmalah {
-    color: white;
-    letter-spacing: 0.5px;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 100;
-    font-style: normal;
-    font-size: 12px;
-    bottom: 6px;
-    position: relative;
-}
-
 .logo-desc {
     height: 20px;
     display: flex;
@@ -72,7 +47,8 @@
     text-decoration: none;
     font-size: 18px;
     font-family:'Times New Roman', Times, serif;
-    color: rgb(255, 255, 255);
+    color: rgb(111, 182, 244);
+
     text-transform: uppercase;
     font-weight: 100;
 }
