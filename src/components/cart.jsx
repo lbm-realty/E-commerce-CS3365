@@ -1,9 +1,11 @@
 import "../css/cart.css";
 import { useEffect, useState } from "react";
+import Navbar from "./navbar";
 
 const Cart = () => {
   const retreivedItems = localStorage.getItem("cartItems");
   const items = retreivedItems ? JSON.parse(retreivedItems) : null;
+  // console.log(items[0].price)
   const [products, setProducts] = useState(items);
   const [count, setCount] = useState(new Array(1).fill(products.map(product => product.quantity)));
   const [changed, setChanged] = useState(false);
@@ -60,7 +62,7 @@ const Cart = () => {
     var sum = 0;
     for (let i = 0; i < products.length; i++) {
       var productPrice = products[i].price;
-      var currPrice = productPrice.slice(1) * products[i].quantity;
+      var currPrice = productPrice * products[i].quantity;
       sum += currPrice;
     }
     return sum;
@@ -72,7 +74,10 @@ const Cart = () => {
   const grandtotal = Number(tax) + Number(totalPrice);
 
   return (
+    <>
+    <Navbar />
     <div className="cart-outer">
+      
       <div className="cart-full">
         <div className="cart-inner">
           <h3 className="cart-header">Your Items</h3>
@@ -150,12 +155,16 @@ const Cart = () => {
               <h2 className="subtotal-item-1">{grandtotal.toFixed(2)}</h2>
             </div>
             <div className="checkout-div">
-                <button className="checkout">Checkout</button>
+                <button 
+                className="checkout"
+                onClick={() => {window.location.href = "/checkout"}}
+                >Checkout</button>
             </div>
           </div>
         </div>
       </div>
     </div>
+    </>
   );
 };
 

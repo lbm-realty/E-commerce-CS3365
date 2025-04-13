@@ -1,15 +1,11 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from 'react-router-dom';
-// import FilterOptions from "./filterOptions";
-// import SearchBar from "./searchBar";
 
 const ShopComponent = ({ data, addToCart }) => {
   const sizes = ["S", "M", "L", "XL"];
-  const [selectSize, setSelectSize] = useState(new Array(3).fill(false));
-  const [size, setSize] = useState(new Array(3).fill(""))
-  const [amount, setAmount] = useState(new Array(3).fill(0))
+  const [selectSize, setSelectSize] = useState(new Array(12).fill(false));
+  const [size, setSize] = useState(new Array(12).fill(""))
+  const [amount, setAmount] = useState(new Array(12).fill(0))
   const [total, setTotal] = useState(0);
-  const navigate = useNavigate();
   console.log(`Props in shopcomp: ${data.length}`)
   const current_products = data;
   const [products, setProducts] = useState(data);
@@ -29,12 +25,6 @@ const ShopComponent = ({ data, addToCart }) => {
       addToCart(updatedProducts)
   }, [amount, size, data]); 
 
-  const handleCartClick = () => {
-    setProducts(products);
-    console.log(products);
-    localStorage.setItem("cartItems", JSON.stringify(products));
-    navigate("/cart");
-  };
   const handleCartAmount = (index1) => {
     if (size[index1] === "") {
       alert("Please select a size");
@@ -61,9 +51,9 @@ const ShopComponent = ({ data, addToCart }) => {
   }
   
   return (
-      <div className="flex bg-blue-100">
-        <div className="py-20 px-20 ml-40">
-          <div className="flex flex-wrap justify-center gap-10 p-2">
+      <div className="flex bg-blue-100 p-0">
+        <div className="py-20 px-10 ml-1">
+          <div className="flex flex-wrap justify-center gap-5 p-2">
             {products.map((product, index1) => (
               <div className="bg-purple-100 p-4 rounded-2xl flex flex-col items-center">
                 <img

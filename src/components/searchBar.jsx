@@ -8,7 +8,7 @@ const SearchBar = ({ onSearch }) => {
         console.log(query)
     }, [query])
     const handleSearch = () => {
-        onSearch(query); // Pass the query to parent component
+        onSearch(query); 
     };
 
     const handleKeyDown = (e) => {

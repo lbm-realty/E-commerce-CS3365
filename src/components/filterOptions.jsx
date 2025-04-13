@@ -24,17 +24,13 @@ const FilterOptions = ({ onFilterChange, currentFilters }) => {
             newEffect[index] = !newEffect[index]
             return newEffect
         })
-        // console.log(`Here, filtered options, ${range}`)
     };
-
-    // const isActive = (range) => currentFilters.priceRange === range;
 
     return (
         <div className="w-64 pt-50 px-4 bg-gray-100 fixed h-screen">
             <h2 className="text-black text-2xl mb-6">Filters</h2>
-            
             <div className="mb-6">
-                <h3 className="text-lg font-medium mb-3">Price Range</h3>
+                <h3 className="text-lg font-medium mb-3 text-black">Price Range</h3>
                 <div className="space-y-2">
                     <button
                         onClick={() => handlePriceFilter(0, 25)}
