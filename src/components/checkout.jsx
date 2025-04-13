@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function Checkout() {
+const Checkout = () => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -20,14 +20,12 @@ export default function Checkout() {
 
   const [orderComplete, setOrderComplete] = useState(false);
   
-  // Mock cart items
   const cartItems = [
     { id: 1, name: "Premium Tee", size: "L", price: 29.99, quantity: 1, source: "/api/placeholder/100/100" },
     { id: 2, name: "Classic Hoodie", size: "M", price: 49.99, quantity: 2, source: "/api/placeholder/100/100" }
   ];
   
-  // Calculate order summary
-  const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+  const subtotal = items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
   const shipping = 5.99;
   const tax = subtotal * 0.08;
   const total = subtotal + shipping + tax;
@@ -39,7 +37,6 @@ export default function Checkout() {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Process order (mock)
     setTimeout(() => {
       setOrderComplete(true);
     }, 1000);
@@ -276,3 +273,5 @@ export default function Checkout() {
     </div>
   );
 }
+
+export default Checkout
